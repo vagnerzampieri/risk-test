@@ -50,3 +50,22 @@
 
   Utilizing historical transaction data, including previous chargebacks, fraud incidents, or suspicious activities, can help identify patterns and trends. Comparing current transaction data with historical data can help identify anomalies or recurring patterns.
 
+### Application Risk Test
+
+#### Requirements
+
+-What is the main purpose of the system?
+  - Analyze the risk of fraud in transactions made through mobile devices
+
+- What are the functional objectives of the system?
+  - Creates an endpoint to receives transaction data and returns a recommendation to `approve/deny` the transaction.
+  - Reject transaction if user is trying too many transactions in a row.
+  - Reject transactions above a certain amount in a given period.
+  - Reject transaction if a user had a chargeback before (note that this information does not comes on the payload. The chargeback data is received days after the transaction was approved).
+  - use rule-based, or score-based, or both, to make the decision.
+
+- What are the non-functional objectives of the system?
+  - Latency
+  - Security
+  - Architecture
+  - Coding style
