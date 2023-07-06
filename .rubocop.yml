@@ -1,0 +1,11 @@
+require:
+  - rubocop-factory_bot
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120

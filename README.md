@@ -94,7 +94,7 @@
   - merchant_id
   - user_id
   - card_number (use rails encrypt because the security)
-  - date
+  - reference_date
   - device_id
   - has_cbk (boolean)
 
