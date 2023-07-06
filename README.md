@@ -69,3 +69,52 @@
   - Security
   - Architecture
   - Coding style
+
+#### Database Structure
+
+- Merchant
+  - id
+  - name
+
+- User
+  - id
+  - merchant_id
+  - name
+
+- Device
+  - id
+  - user_id
+  - name
+  - ip
+
+- Transaction
+  - id
+  - merchant_id
+  - user_id
+  - card_number (use rails encrypt because the security)
+  - date
+  - device_id
+  - has_cbk (boolean)
+
+#### Endpoints
+
+- POST /recommendations
+  - body: 
+  ```
+  {
+    "transaction_id" : 2342357,
+    "merchant_id" : 29744,
+    "user_id" : 97051,
+    "card_number" : "434505******9116",
+    "transaction_date" : "2019-11-31T23:16:32.812632",
+    "transaction_amount" : 373,
+    "device_id" : 285475
+  }
+  ```
+  - response: 
+  ```
+  { "transaction_id" : 2342357, "recommendation" : "approve" }
+  ```
+  - considerations: I used POST because we'll be sending `card_number` in te body, and if I used GET, the card number would be exposed in the URL. I used `recommendation` instead of `status` because I think it's more clear.
+
+#### Architecture
