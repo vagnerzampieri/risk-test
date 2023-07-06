@@ -72,6 +72,8 @@
 
 #### Database Structure
 
+- I used sqlite3 because it's easy to setup and use.
+
 - Merchant
   - id
   - name
