@@ -121,4 +121,4 @@
 
 #### Diagram
 
-![Diagram](./diagram.png)
+![Diagram](./doc/images/diagram.png)
