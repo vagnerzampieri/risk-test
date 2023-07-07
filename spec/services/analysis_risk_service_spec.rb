@@ -37,6 +37,32 @@ RSpec.describe AnalysisRiskService, type: :service do
           )
         end
       end
+
+      context 'and user has more than 5 transactions in the last 30 minutes' do
+        before do
+          create_list(:transaction, 6, user:, reference_at: 29.minutes.ago)
+        end
+
+        it 'returns recommendation' do
+          expect(service.call).to eq(
+            transaction_id: transaction.id,
+            recommendation: 'deny'
+          )
+        end
+      end
+
+      context 'and user has a transaction with amount greater than 3000 in the last 30 minutes' do
+        before do
+          create(:transaction, user:, amount: 3001, reference_at: 29.minutes.ago)
+        end
+
+        it 'returns recommendation' do
+          expect(service.call).to eq(
+            transaction_id: transaction.id,
+            recommendation: 'deny'
+          )
+        end
+      end
     end
   end
 end

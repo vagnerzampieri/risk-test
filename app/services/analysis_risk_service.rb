@@ -26,7 +26,7 @@ class AnalysisRiskService
 
   def recommendation
     return 'deny' if user_transactions.where(has_cbk: true).any?
-    return 'deny' if recent_transactions.count > 5
+    return 'deny' if recent_transactions.size > 5
     return 'deny' if recent_transactions.where('amount > ?', 3000).any?
 
     'approve'
