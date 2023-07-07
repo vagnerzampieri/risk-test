@@ -9,9 +9,11 @@ RSpec.describe AnalysisRiskService, type: :service do
     let(:params) do
       {
         transaction_id: transaction.id,
-        user_id: user.id
+        user_id: user.id,
+        amount: 20
       }
     end
+
     let(:user) { create(:user) }
     let(:transaction) { create(:transaction, user:) }
 
@@ -40,7 +42,7 @@ RSpec.describe AnalysisRiskService, type: :service do
 
       context 'and user has more than 5 transactions in the last 30 minutes' do
         before do
-          create_list(:transaction, 6, user:, reference_at: 29.minutes.ago)
+          create_list(:transaction, 5, user:, reference_at: 29.minutes.ago)
         end
 
         it 'returns recommendation' do
