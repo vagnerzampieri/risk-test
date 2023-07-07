@@ -13,7 +13,7 @@ RSpec.describe AnalysisRiskService, type: :service do
       }
     end
     let(:user) { create(:user) }
-    let(:transaction) { create(:transaction, user: user) }
+    let(:transaction) { create(:transaction, user:) }
 
     context 'when transaction is approved' do
       it 'returns recommendation' do
@@ -25,15 +25,17 @@ RSpec.describe AnalysisRiskService, type: :service do
     end
 
     context 'when transaction is denied' do
-      before do
-        create(:transaction, user: user, has_cbk: true)
-      end
+      context 'and user has cbk' do
+        before do
+          create(:transaction, user:, has_cbk: true)
+        end
 
-      it 'returns recommendation' do
-        expect(service.call).to eq(
-          transaction_id: transaction.id,
-          recommendation: 'deny'
-        )
+        it 'returns recommendation' do
+          expect(service.call).to eq(
+            transaction_id: transaction.id,
+            recommendation: 'deny'
+          )
+        end
       end
     end
   end

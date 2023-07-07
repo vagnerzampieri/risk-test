@@ -25,7 +25,7 @@ devices.compact.sort_by { |a| a[0] }.each do |device_id, user_id|
   next if Device.exists?(id: device_id)
 
   Device.create!(id: device_id,
-                 user_id: user_id,
+                 user_id:,
                  name: 'Mobile',
                  ip: Faker::Internet.ip_v4_address)
 end

@@ -4,8 +4,14 @@ require:
   - rubocop-rspec
   - rubocop-performance
 
-Style/Documentation:
-  Enabled: false
-
 Layout/LineLength:
   Max: 120
+
+Rspec/ContextWording:
+  Enabled: false
+
+Rspec/NestedGroups:
+  Max: 4
+
+Style/Documentation:
+  Enabled: false
