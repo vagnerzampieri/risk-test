@@ -4,7 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Recommendations', type: :request do
   describe 'POST /create' do
-    subject(:create_recommendation) { post '/recommendations', params: }
+    subject(:create_recommendation) do
+      post '/recommendations', params:, headers: { 'Authorization' => "Bearer #{token}" }
+    end
 
     let(:params) do
       {
@@ -12,6 +14,8 @@ RSpec.describe 'Recommendations', type: :request do
         user_id: user.id
       }
     end
+
+    let(:token) { Rails.application.credentials.mobile_client.token }
     let(:user) { create(:user) }
     let(:transaction) { create(:transaction, user:) }
 

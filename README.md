@@ -132,6 +132,7 @@
 curl --location 'localhost:3000/recommendations' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer NUF13rdasrr51fninurgartausdb' \
 --data '  {
     "transaction_id" : 2342357,
     "merchant_id" : 29744,
