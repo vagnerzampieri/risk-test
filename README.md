@@ -3,13 +3,13 @@
 ## Understand the Industry
 
   1. Explain the money flow and the information flow in the acquirer market and the role of the main players.
-    
+
     The money flow in the acquirer market refers to the movement of funds between the entities engaged in acquisitions. It involves the transfer of capital from the acquirer, the entity making the acquisition, to the target company, the entity being acquired. The acquirer typically pays a certain amount of money to the shareholders of the target company in exchange for acquiring a controlling stake or ownership of the target company.
-  
+
     The information flow in the acquirer market involves the exchange of relevant data, market insights, and due diligence findings between the acquirer, target company, and other parties involved in the acquisition process. Accurate and timely information is crucial for making informed decisions and ensuring a successful acquisition.
-  
+
   2. Explain the difference between acquirer, sub-acquirer and payment gateway and how the flow explained in question 1 changes for these players.
-    
+
     An acquirer is a financial institution that processes credit and debit card transactions on behalf of merchants. The acquirer is responsible for ensuring that the transaction is authorized by the card issuer and for settling the transaction with the merchant. The money flow in this case involves the transfer of funds from the card issuer to the acquirer, who then transfers the funds to the merchant’s account.
 
     A sub-acquirer is a third-party company that works with an acquirer to provide payment processing services to merchants. The sub-acquirer acts as an intermediary between the merchant and the acquirer, handling tasks such as transaction authorization and settlement. In this case, the money flow involves the transfer of funds from the card issuer to the acquirer, who then transfers the funds to the sub-acquirer, who finally transfers the funds to the merchant’s account.
@@ -17,9 +17,9 @@
     A payment gateway is a service that authorizes credit card payments for online transactions. It acts as an intermediary between a merchant’s website and the acquiring bank, transmitting transaction information securely. In this case, the money flow involves the transfer of funds from the card issuer to the acquiring bank, who then transfers the funds to the merchant’s account.
 
   3. Explain what chargebacks are, how they differ from cancellations and what is their connection with fraud in the acquiring world.
-   
+
     A chargeback is a transaction reversal initiated by the cardholder's bank (issuing bank) in response to a dispute or a specific reason. It allows the cardholder to request a refund for a transaction directly from their bank. The bank investigates the dispute and may reverse the transaction, debiting the funds from the merchant's account and crediting them back to the cardholder. Chargebacks are primarily designed to protect consumers from fraudulent transactions, billing errors, or unauthorized card usage.
-    
+
     A cancellation refers to the act of voiding or canceling a transaction before it is processed or completed. It usually occurs when the customer or the merchant initiates the cancellation request, and the transaction is halted before any funds are transferred. Unlike chargebacks, cancellations do not involve the intervention of the cardholder's bank. Cancellations typically result in the transaction being voided, with no financial impact on either the customer or the merchant.
 
     Connection with fraud, chargebacks are closely connected to fraud in the acquiring world. Fraudulent activities, such as unauthorized transactions, stolen card details, or identity theft, can lead to chargebacks. If a cardholder detects an unrecognized or unauthorized transaction on their account, they may file a dispute with their bank, triggering a chargeback investigation. Merchants are responsible for proving the legitimacy of the transaction to avoid the chargeback and associated financial losses.
@@ -31,7 +31,7 @@
 ## Analysis of provided data
 
   The number of transactions made using a mobile can be calculated by counting the rows in the database.
-  
+
   Analyzing the transaction amounts can provide insights into the spending patterns of users. Key metrics to consider include the average transaction amount, the minimum and maximum transaction amounts, and the distribution of transaction amounts. These statistics help identify any unusual or outlier transactions.
 
   Examining the "has_cbk" column, which indicates whether a transaction has resulted in a chargeback, can help identify the frequency of chargebacks. Calculating the chargeback rate (number of chargebacks divided by the total number of transactions) can provide an overview of the chargeback risk associated with mobile transactions.
@@ -80,7 +80,6 @@
 
 - User
   - id
-  - merchant_id
   - name
 
 - Device
@@ -94,14 +93,14 @@
   - merchant_id
   - user_id
   - card_number (use rails encrypt because the security)
-  - reference_date
+  - reference_at
   - device_id
   - has_cbk (boolean)
 
 #### Endpoints
 
 - POST /recommendations
-  - body: 
+  - body:
   ```
   {
     "transaction_id" : 2342357,
@@ -113,7 +112,7 @@
     "device_id" : 285475
   }
   ```
-  - response: 
+  - response:
   ```
   { "transaction_id" : 2342357, "recommendation" : "approve" }
   ```
@@ -122,3 +121,9 @@
 #### Diagram
 
 ![Diagram](./doc/images/diagram.png)
+
+#### Run application
+
+`bundle install`
+`rails db:setup`
+`rails s`
