@@ -116,7 +116,7 @@
   ```
   { "transaction_id" : 2342357, "recommendation" : "approve" }
   ```
-  - considerations: I used POST because we'll be sending `card_number` in the body, and if I used GET, the card number would be exposed in the URL. I used `recommendation` instead of `status` because I think it's more clear.
+  - considerations: I used POST because we'll be sending `card_number` in the body, and if I used GET, the card number would be exposed in the URL.
 
 #### Diagram
 
