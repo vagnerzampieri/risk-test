@@ -124,9 +124,9 @@
 
 #### Run application
 
-`bundle install`
-`bundle exec rails db:setup`
-`bundle exec rails s`
+- `bundle install`
+- `bundle exec rails db:setup`
+- `bundle exec rails s`
 
 ```
 curl --location 'localhost:3000/recommendations' \
