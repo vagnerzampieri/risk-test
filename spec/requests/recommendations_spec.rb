@@ -52,5 +52,15 @@ RSpec.describe 'Recommendations', type: :request do
         end
       end
     end
+
+    context 'whithout token' do
+      let(:token) { nil }
+
+      it 'returns http unauthorized' do
+        create_recommendation
+
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
   end
 end
