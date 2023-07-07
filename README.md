@@ -54,7 +54,7 @@
 
 #### Requirements
 
--What is the main purpose of the system?
+- What is the main purpose of the system?
   - Analyze the risk of fraud in transactions made through mobile devices
 
 - What are the functional objectives of the system?
