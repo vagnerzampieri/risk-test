@@ -4,9 +4,7 @@
 
   1. Explain the money flow and the information flow in the acquirer market and the role of the main players.
 
-    The money flow in the acquirer market refers to the movement of funds between the entities engaged in acquisitions. It involves the transfer of capital from the acquirer, the entity making the acquisition, to the target company, the entity being acquired. The acquirer typically pays a certain amount of money to the shareholders of the target company in exchange for acquiring a controlling stake or ownership of the target company.
-
-    The information flow in the acquirer market involves the exchange of relevant data, market insights, and due diligence findings between the acquirer, target company, and other parties involved in the acquisition process. Accurate and timely information is crucial for making informed decisions and ensuring a successful acquisition.
+    The acquirer market is a financial market where companies can acquire other companies. The money flow in the acquirer market is from the acquirer to the target company. The acquirer typically pays the target company in cash, stock, or a combination of both. The information flow in the acquirer market is from the target company to the acquirer. The target company provides the acquirer with information about its financial performance, assets, liabilities, and other relevant information.
 
   2. Explain the difference between acquirer, sub-acquirer and payment gateway and how the flow explained in question 1 changes for these players.
 
@@ -30,25 +28,25 @@
 
 ## Analysis of provided data
 
-  The number of transactions made using a mobile can be calculated by counting the rows in the database.
+  - The number of transactions made using a mobile can be calculated by counting the rows in the database.
 
-  Analyzing the transaction amounts can provide insights into the spending patterns of users. Key metrics to consider include the average transaction amount, the minimum and maximum transaction amounts, and the distribution of transaction amounts. These statistics help identify any unusual or outlier transactions.
+  - Analyzing the transaction amounts can provide insights into the spending patterns of users. Key metrics to consider include the average transaction amount, the minimum and maximum transaction amounts, and the distribution of transaction amounts. These statistics help identify any unusual or outlier transactions.
 
-  Examining the "has_cbk" column, which indicates whether a transaction has resulted in a chargeback, can help identify the frequency of chargebacks. Calculating the chargeback rate (number of chargebacks divided by the total number of transactions) can provide an overview of the chargeback risk associated with mobile transactions.
+  - Examining the "has_cbk" column, which indicates whether a transaction has resulted in a chargeback, can help identify the frequency of chargebacks. Calculating the chargeback rate (number of chargebacks divided by the total number of transactions) can provide an overview of the chargeback risk associated with mobile transactions.
 
-  Analyzing the relationships between users and merchants can help identify any patterns or associations that may indicate potential fraud. For example, identifying multiple transactions from the same user or the same device across different merchants could raise suspicion.
+  - Analyzing the relationships between users and merchants can help identify any patterns or associations that may indicate potential fraud. For example, identifying multiple transactions from the same user or the same device across different merchants could raise suspicion.
 
   Additional data to consider for detecting patterns of possible frauds:
 
-  Analyzing user behavior data, such as login timestamps, session duration, and frequency of transactions, can help identify unusual patterns. Sudden changes in user behavior, such as a significant increase in transaction volume or transactions made at unusual times, may indicate fraudulent activity.
+    - Analyzing user behavior data, such as login timestamps, session duration, and frequency of transactions, can help identify unusual patterns. Sudden changes in user behavior, such as a significant increase in transaction volume or transactions made at unusual times, may indicate fraudulent activity.
 
-  Considering the geolocation data associated with each transaction, such as IP addresses or GPS coordinates, can provide insights into the legitimacy of the transactions. Unusual or unexpected locations for transactions may raise suspicion.
+    - Considering the geolocation data associated with each transaction, such as IP addresses or GPS coordinates, can provide insights into the legitimacy of the transactions. Unusual or unexpected locations for transactions may raise suspicion.
 
-  Examining device information, such as device IDs, device types, and operating systems, can help identify patterns related to fraud. Multiple transactions from the same device or inconsistencies in device data could indicate fraudulent activities.
+    - Examining device information, such as device IDs, device types, and operating systems, can help identify patterns related to fraud. Multiple transactions from the same device or inconsistencies in device data could indicate fraudulent activities.
 
-  Analyzing the timing of transactions, including the time of day, day of the week, or seasonality patterns, can help identify any irregularities. Unusual transaction patterns occurring outside normal usage patterns may indicate fraudulent behavior.
+    - Analyzing the timing of transactions, including the time of day, day of the week, or seasonality patterns, can help identify any irregularities. Unusual transaction patterns occurring outside normal usage patterns may indicate fraudulent behavior.
 
-  Utilizing historical transaction data, including previous chargebacks, fraud incidents, or suspicious activities, can help identify patterns and trends. Comparing current transaction data with historical data can help identify anomalies or recurring patterns.
+    - Utilizing historical transaction data, including previous chargebacks, fraud incidents, or suspicious activities, can help identify patterns and trends. Comparing current transaction data with historical data can help identify anomalies or recurring patterns.
 
 ### Application Risk Test
 
