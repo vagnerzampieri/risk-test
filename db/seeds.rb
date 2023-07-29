@@ -37,6 +37,5 @@ csv.each do |row|
                       amount: row['transaction_amount'].to_d,
                       card_number: row['card_number'],
                       device_id: row['device_id']&.to_i,
-                      reference_at: row['transaction_date'],
                       has_cbk: row['has_cbk'])
 end

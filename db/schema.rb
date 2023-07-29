@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_133441) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_29_134811) do
   create_table "devices", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name"
@@ -32,7 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_133441) do
     t.integer "user_id", null: false
     t.string "card_number"
     t.decimal "amount"
-    t.datetime "reference_at"
     t.integer "device_id"
     t.boolean "has_cbk"
     t.datetime "created_at", null: false

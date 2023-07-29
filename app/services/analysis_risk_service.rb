@@ -17,12 +17,12 @@ class AnalysisRiskService
   attr_reader :params
 
   def user_transactions
-    @user_transactions ||= Transaction.select(:user_id, :reference_at, :amount, :has_cbk)
+    @user_transactions ||= Transaction.select(:user_id, :created_at, :amount, :has_cbk)
                                       .where(user_id: params[:user_id])
   end
 
   def recent_transactions
-    @recent_transactions ||= user_transactions.where('reference_at > ?', 30.minutes.ago)
+    @recent_transactions ||= user_transactions.where('created_at > ?', 30.minutes.ago)
   end
 
   def more_than_5_transactions?
