@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_180753) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_29_133441) do
   create_table "devices", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_180753) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_merchants_on_name"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -36,7 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_180753) do
     t.boolean "has_cbk"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["amount"], name: "index_transactions_on_amount"
     t.index ["device_id"], name: "index_transactions_on_device_id"
+    t.index ["has_cbk"], name: "index_transactions_on_has_cbk"
     t.index ["merchant_id"], name: "index_transactions_on_merchant_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
@@ -45,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_180753) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_users_on_name"
   end
 
   add_foreign_key "devices", "users"
