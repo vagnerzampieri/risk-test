@@ -121,6 +121,7 @@
 
 #### Run application
 
+- get the `master.key` file with the owner of the repository
 - `bundle install`
 - `bundle exec rails db:setup`
 - `bundle exec rails s`
