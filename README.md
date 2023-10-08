@@ -144,3 +144,24 @@ curl --location 'localhost:3000/recommendations' \
 #### How to run the tests
 
 `make test`
+
+#### Use Shale
+
+- The idea is to use Shale instead of the actual seed file. I need to think in a way to map the data for the database structure.
+
+```ruby
+csv_text = File.read(Rails.root.join('db/transactional-without-header.csv'))
+TransactionalCsv.from_csv(csv_text)
+
+=> [
+  #<TransactionalCsv:0x00007f15cc44b4a0
+  @card_number="650487******9884",
+  @device_id=nil,
+  @has_cbk=false,
+  @merchant_id=17348,
+  @transaction_amount=2416.7,
+  @transaction_date=2019-11-01 01:27:15.811098 -0300,
+  @transaction_id=21323596,
+  @user_id=8>
+]
+```

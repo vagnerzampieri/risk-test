@@ -8,7 +8,7 @@ Layout/LineLength:
   Max: 120
 
 Rspec/ContextWording:
-  Enabled: false
+  Enabled: true
 
 Rspec/NestedGroups:
   Max: 4
