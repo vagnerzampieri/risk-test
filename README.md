@@ -70,8 +70,6 @@
 
 #### Database Structure
 
-- I used sqlite3 because it's easy to setup and use.
-
 - Merchant
   - id
   - name
@@ -119,12 +117,14 @@
 
 ![Diagram](./doc/images/diagram.png)
 
-#### Run application
+#### Run application (See Makefile for more commands)
 
-- get the `master.key` file with the owner of the repository
-- `bundle install`
-- `bundle exec rails db:setup`
-- `bundle exec rails s`
+- get the `master.key` file with the owner of the repository, if is impossible to contact him, remove the `config/credentials.yml.enc` file and run `EDITOR=vim rails credentials:edit` to generate a new one.
+- `docker network create risk`
+- `make start`
+- `make install`
+- `make setup_db`
+- `make server`
 
 ```
 curl --location 'localhost:3000/recommendations' \
@@ -143,4 +143,4 @@ curl --location 'localhost:3000/recommendations' \
 ```
 #### How to run the tests
 
-`bundle exec rspec`
+`make test`
